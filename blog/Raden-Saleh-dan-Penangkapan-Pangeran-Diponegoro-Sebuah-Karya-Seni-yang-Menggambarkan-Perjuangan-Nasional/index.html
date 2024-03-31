@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raden Saleh dan 'Penangkapan Pangeran Diponegoro': Sebuah Karya Seni yang Menggambarkan Perjuangan Nasional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Raden Saleh dan 'Penangkapan Pangeran Diponegoro': Sebuah Karya Seni yang Menggambarkan Perjuangan Nasional</h1>
+      <h2 id="blog_sub_title">#art</h2>
+      <div id="blog"><p id="para_0_original"><br>Lukisan "Penangkapan Pangeran Diponegoro" oleh Raden Saleh merupakan salah satu karya seni yang paling berpengaruh dan berharga dalam sejarah seni Indonesia. Lukisan ini menangkap momen penting dalam sejarah Indonesia, yaitu penangkapan Pangeran Diponegoro oleh Belanda pada tahun 1857. Lukisan ini berada di Museum Kepresidenan, Yogyakarta, dan merupakan bagian dari koleksi benda seni kenegaraan Indonesia.</br>
+
+        <br>Raden Saleh, seorang seniman dari Yogyakarta, dikenal dengan karya-karyanya yang menggambarkan kehidupan masyarakat Jawa, termasuk peristiwa penting dalam sejarah Indonesia. Lukisan "Penangkapan Pangeran Diponegoro" menunjukkan komposisi yang seimbang dan berkesinambungan, menjadikannya salah satu mahakarya Saleh. Lukisan ini juga dianggap sebagai salah satu contoh pertama nasionalisme Asia dalam seni.</br>
+
+        <br>Lukisan ini juga memiliki dampak budaya yang signifikan. Misalnya, pada tahun 1995, penyair Taufik Ismail mendedikasikan puisi berjudul "Pangeran Diponegoro" yang mendeskripsikan lukisan ini. Selain itu, lukisan ini juga telah diadaptasi dalam berbagai bentuk seni lainnya, seperti versi parodi oleh seniman Yogyakarta Rudy Vinarso, penggunaan reproduksi lukisan skala besar sebagai latar belakang Opera Diponegoro, dan bahkan plot utama dalam film drama aksi "Mencuri Raden Saleh" pada tahun 2022.</br>
+
+        <br>Namun, lukisan ini juga mendapatkan berbagai kritik. Beberapa kritikus menunjukkan bahwa lukisan ini memiliki ketidakseimbangan dalam komposisi dan detail, seperti kepala perwira Belanda yang terlalu besar dan tidak ada dalam sketsa awal. Selain itu, lukisan ini juga tidak menampilkan bendera Belanda, yang merupakan elemen penting dalam lukisan Pieneman. Meski demikian, lukisan ini tetap menjadi ikon seni rupa nasional Indonesia dan simbol perjuangan nasional.</br>
+
+        <br>Secara keseluruhan, "Penangkapan Pangeran Diponegoro" oleh Raden Saleh adalah karya seni yang tidak hanya mencerminkan sejarah Indonesia tetapi juga menjadi simbol perjuangan dan nasionalisme. Lukisan ini terus mendapatkan penghargaan dan pengakuan sebagai bagian penting dari warisan budaya Indonesia.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

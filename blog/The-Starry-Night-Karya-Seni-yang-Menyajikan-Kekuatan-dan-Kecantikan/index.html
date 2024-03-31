@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Starry Night: Karya Seni yang Menyajikan Kekuatan dan Kecantikan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">The Starry Night: Karya Seni yang Menyajikan Kekuatan dan Kecantikan</h1>
+      <h2 id="blog_sub_title">#art</h2>
+      <div id="blog"><p id="para_0_original"><br>"The Starry Night" adalah sebuah karya seni yang dikaryakan oleh Vincent van Gogh pada tahun 1889. Karya ini merupakan bagian dari gerakan seni Post-Impressionism dan menjadi salah satu karya seni paling terkenal dan berharga di dunia.</br>
+
+        <br>Vincent van Gogh, seorang seniman Belanda, menciptakan ratusan karya seni dan sketsa sepanjang hidupnya, namun dia tidak mencapai kesuksesan yang luas seperti seniman lainnya. Hanya setelah kematiannya, dia menjadi populer, dan kadang-kadang karya-karyanya bahkan menjadi pusat perhatian, "The Starry Night" adalah salah satunya.</br>
+
+        <br>Karya ini menampilkan langit malam yang penuh dengan awan berputar, bintang-bintang berkilauan, dan bulan sabit yang cerah. Pemandangan ini menarik dan dapat dihubungkan dengan pengalaman pengamat. Van Gogh menggunakan teknik yang berbeda dari seniman Impressionis 19-an, dengan bentuk yang berbentuk dan penggunaan warna yang kuat untuk menyampaikan emosi.</br>
+
+        <br>Penggunaan warna dalam "The Starry Night" telah banyak diperdebatkan, terutama dominasi warna kuning dalam karya-karya akhirnya. Beberapa orang percaya bahwa van Gogh mungkin menderita penyakit otak atau pencemaran berat, yang menjelaskan penggunaan warna yang aneh dalam karya-karya tersebut.</br>
+
+        <br>Karya ini menampilkan kekuatan alam dan menunjukkan kontras antara kehidupan dan kematian dengan bintang-bintang berkilauan dan desa yang damai. Warna-warna yang kaya dan tekstur yang kaya dalam "The Starry Night" mencerminkan gaya seni ekspresif van Gogh, serta dunia dalam dirinya.</br>
+
+        <br>"The Starry Night" menjadi bagian dari warisan van Gogh yang terus hidup dan menjadi salah satu karya seni paling terkenal dan berharga di dunia. Karya ini menunjukkan kekuatan dan kecantikan dalam seni, serta bagaimana seorang seniman dapat mengekspresikan emosi dan pengalaman dalam bentuk visual yang kuat dan indah.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

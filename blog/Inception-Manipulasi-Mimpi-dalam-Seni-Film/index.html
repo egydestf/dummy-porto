@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inception: Manipulasi Mimpi dalam Seni Film</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Inception: Manipulasi Mimpi dalam Seni Film</h1>
+      <h2 id="blog_sub_title">#film</h2>
+      <div id="blog"><p id="para_0_original"><br>Film "Inception" adalah salah satu film yang menarik dan berdampak besar dalam industri film, terutama di Indonesia. Film ini, yang dirilis pada tahun 2010, menampilkan konsep yang unik dan menarik, yaitu manipulasi mimpi. Inception menggabungkan elemen-elemen dari film-film sebelumnya dengan pendekatan baru dalam narasi dan efek visual, menciptakan pengalaman menonton yang tak terlupakan.</br>
+
+        <br>Film ini mendapatkan berbagai penghargaan, termasuk Oscar untuk Best Achievement in Sound Editing, yang menunjukkan kualitas dan inovasi yang ditampilkan dalam film ini. Inception juga menunjukkan bagaimana film dapat mengeksplorasi tema-tema yang kompleks dan menarik, seperti realitas dan ilusi, serta bagaimana film dapat digunakan sebagai medium untuk menyampaikan pesan yang mendalam.</br>
+
+        <br>Di Indonesia, film seperti Inception memiliki peran penting dalam menggali dan mempromosikan diversitas dalam seni film. Indonesia memiliki sejarah film yang kaya dan beragam, dengan berbagai genre dan tema yang mencerminkan budaya dan tradisi lokal serta pengaruh dari budaya lain. Film-film seperti Inception dapat menjadi contoh bagaimana film dapat mengeksplorasi dan menampilkan berbagai aspek dari kehidupan manusia, termasuk konsep-konsep yang kompleks seperti manipulasi mimpi.</br>
+
+        <br>Film-film seperti Inception juga menunjukkan bagaimana film dapat menjadi platform untuk diskusi dan refleksi tentang masalah-masalah sosial dan budaya. Dalam konteks Indonesia, film dapat digunakan untuk mengeksplorasi dan menampilkan berbagai aspek dari kehidupan dan budaya Indonesia, serta bagaimana film dapat menjadi alat untuk memahami dan menghargai perbedaan budaya.</br>
+
+        <br>Selain itu, film seperti Inception juga menunjukkan bagaimana film dapat menjadi alat untuk memahami dan menghargai perbedaan budaya. Dalam konteks Indonesia, film dapat digunakan untuk mengeksplorasi dan menampilkan berbagai aspek dari kehidupan dan budaya Indonesia, serta bagaimana film dapat menjadi alat untuk memahami dan menghargai perbedaan budaya.</br>
+
+        <br>Secara keseluruhan, film seperti Inception menunjukkan bagaimana film dapat menjadi alat yang kuat untuk mengeksplorasi dan menampilkan berbagai aspek dari kehidupan dan budaya, serta bagaimana film dapat menjadi platform untuk diskusi dan refleksi tentang masalah-masalah sosial dan budaya. Di Indonesia, film seperti Inception menunjukkan bagaimana film dapat digunakan untuk mempromosikan diversitas dan inovasi dalam seni film, serta bagaimana film dapat menjadi alat untuk memahami dan menghargai perbedaan budaya.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sejarah dan Pengaruh Budaya Grunge Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Sejarah dan Pengaruh Budaya Grunge Style</h1>
+      <h2 id="blog_sub_title">#fashion</h2>
+      <div id="blog"><p id="para_0_original"><br>Grunge, sebuah genre musik dan gaya pakaian, berasal dari Seattle, Washington, di awal tahun 1980-an. Grunge rock, juga dikenal sebagai suara Seattle, menginspirasi subbudaya yang luas. Grunge tidak hanya mempengaruhi musik tetapi juga menjadi simbol dari perjuangan dan nonkonformitas, menjadi simbol generasi yang tidak mengikuti aturan dan mencari kebebasan melalui seni dan gaya hidup mereka.</br>
+
+        <br>Awalnya, gaya grunge tidak mencari untuk menjadi glamor. Pakaian yang digunakan biasanya murah atau bahkan tidak berharga, menunjukkan kepada dunia bahwa tidak ada yang perlu dihabiskan untuk tampilan. Namun, seiring berjalannya waktu, desainer terkemuka mulai mengintegrasikan elemen grunge ke dalam koleksi mereka, membuatkan flanel, dress slip, sepatu combat, dan gaya alternatif lainnya menjadi bagian dari moda utama dengan harga tinggi.</br>
+
+        <br>Grunge musik mencapai popularitas utama di awal tahun 1990-an dengan band seperti Soundgarden, Alice in Chains, Pearl Jam, dan Nirvana yang ditandatangani oleh label rekaman besar. Gaya grunge mulai memasuki moda utama untuk kedua jenis kelamin pada tahun 1992 dan mencapai puncaknya pada tahun 1993 dan 1994. Ironisnya, gaya nonkonformis yang awalnya menjadi tren utama menjadi tren moda utama, dengan desainer seperti Marc Jacobs dan Anna Sui yang mengambil inspirasi dari grunge.</br>
+
+        <br>Meski gerakan grunge mulai menurun setelah kematian Kurt Cobain pada tahun 1994, desainer terus mengambil inspirasi dari gerakan ini. Grunge kembali muncul sebagai tren pada tahun 2008, dan untuk musim Fall/Winter 2013, Hedi Slimane di Yves Saint Laurent membawa kembali grunge ke taman bermain. Dengan Courtney Love sebagai muse, koleksi tersebut mendapatkan pengakuan dari para tokoh tersebut.</br>
+
+        <br>Grunge juga mempengaruhi budaya pop, dengan gaya yang mencakup jeans yang terpotong, pagar ketting, dan foto Converse yang rusak menjadi simbol dari gerakan ini. Meski gerakan ini telah berkembang dan berubah seiring waktu, gaya grunge tetap memiliki pengaruh yang signifikan dalam moda dan budaya pop.</br>
+
+        <br>Grunge tidak hanya tentang gaya pakaian, tetapi juga tentang semangat dan pesan yang ingin disampaikan. Gerakan ini mencoba menciptakan ruang bagi individu untuk mengekspresikan diri mereka tanpa harus mengikuti tren atau memiliki uang untuk pakaian terbaru. Ini adalah aspek yang sangat penting dari grunge dan yang terus menjadi inspirasi bagi banyak generasi setelahnya.</br>
+
+        <br>Dengan demikian, grunge tidak hanya sekedar tren moda yang berlama-lamanya, tetapi juga sebuah perjuangan dan simbol dari kebebasan dan nonkonformitas. Gerakan ini telah meninggalkan jejak yang kuat dalam sejarah moda dan budaya, dan terus menjadi inspirasi bagi mereka yang mencari cara untuk mengekspresikan diri mereka melalui seni dan gaya hidup mereka.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

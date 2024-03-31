@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gunung Rinjani: Kekuatan dan Keindahan Gunung Tertinggi Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Gunung Rinjani: Kekuatan dan Keindahan Gunung Tertinggi Indonesia</h1>
+      <h2 id="blog_sub_title">#nature</h2>
+      <div id="blog"><p id="para_0_original"><br>Gunung Rinjani, yang berlokasi di Lombok, Indonesia, adalah gunung berapi yang masih aktif dan merupakan salah satu gunung tertinggi di Indonesia setelah Irian Jaya. Gunung ini mencapai ketinggian 3.726 meter atau 12.224 kaki, menjadikannya puncak kedua tertinggi di Indonesia dan titik tertinggi di provinsi Nusa Tenggara Barat.</br>
+
+        <br>Gunung Rinjani memiliki kaldera berukuran 6x8,5 kilometer yang diisi sebagian oleh danau crater yang dikenal sebagai Segara Anak atau Anak Laut, yang berwarna biru seperti laut. Danau ini berada pada ketinggian sekitar 2.000 meter di atas permukaan laut dan diperkirakan memiliki kedalaman sekitar 200 meter. Kaldera ini juga mengandung air panas. Gunung dan danau ini dianggap sebagai tempat yang sakral bagi masyarakat Sasak dan Hindu, serta menjadi lokasi ritual keagamaan.</br>
+
+        <br>Pendakian ke Gunung Rinjani menawarkan tantangan yang unik, terutama karena ketinggiannya yang tinggi dan jalur pendakian yang menantang. Banyak pendaki memilih untuk menggunakan pemandu dan porter untuk membawa peralatan dan makanan, tetapi ada juga yang memilih untuk melakukan pendakian tanpa bantuan tersebut. Pendakian ini membutuhkan sekitar dua hari hiking yang intens untuk mencapai puncak.</br>
+
+        <br>Gunung Rinjani juga memiliki program pemantauan yang dilakukan oleh Gunung Rinjani Observation Post Rinjani Sembalun, yang berlokasi di desa Lawang, Sub Sembalun 2,5 kilometer (4.000 kaki) timur laut dari Gunung Rinjani. Pemantau ini bertugas memantau aktivitas Gunung Rinjani dan Gunung Barujari/Gunung Tenga dalam kaldera Segara Anak.</br>
+
+        <br>Sejarah Gunung Rinjani tidak lepas dari peristiwa tragis. Pada 3 November 1994, lahar dingin dari area puncak Rinjani bergerak menuruni Sungai Kokok Jenggak, menewaskan tiga puluh orang dari desa Aikmel yang terkejut saat mengambil air dari sungai. Ini menjadi peringatan penting tentang pentingnya kesadaran dan persiapan dalam menghadapi ancaman gunung berapi.</br>
+
+        <br>Pendakian ke Gunung Rinjani tidak hanya tentang tantangan fisik tetapi juga tentang pengalaman budaya dan spiritual. Masyarakat Sasak dan Hindu memiliki koneksi yang kuat dengan gunung ini, yang menjadi pusat ritual keagamaan mereka. UNESCO menjadikan Kaldera Gunung Rinjani sebagai bagian dari Jaringan Global Geoparks pada April 2018, menunjukkan pentingnya gunung ini dalam konteks global.</br>
+
+        <br>Gunung Rinjani, dengan keindahannya yang tak terlupakan dan tantangan yang menantang, menjadi destinasi yang menarik bagi para pendaki dan penikmat alam. Meskipun tantangan fisik dan emosional yang dihadapi, pendakian ke puncak ini memberikan pengalaman yang tak terlupakan bagi mereka yang mencoba untuk mencapai titik tertinggi di Indonesia.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

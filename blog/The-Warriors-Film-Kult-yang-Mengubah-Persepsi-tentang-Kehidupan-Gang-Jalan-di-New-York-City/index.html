@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Warriors: Film Kult yang Mengubah Persepsi tentang Kehidupan Gang Jalan di New York City</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">The Warriors: Film Kult yang Mengubah Persepsi tentang Kehidupan Gang Jalan di New York City</h1>
+      <h2 id="blog_sub_title">#film</h2>
+      <div id="blog"><p id="para_0_original"><br>Film "The Warriors" adalah sebuah film thriller aksi Amerika Serikat yang dirilis pada tahun 1979, yang disutradarai oleh Walter Hill. Film ini berbasis pada novel "The Warriors" oleh Sol Yurick, yang diterbitkan pada tahun 1965. Cerita film ini berpusat pada sebuah gang jalan di New York City yang harus berperang kembali ke rumah mereka di Coney Island, Brooklyn, setelah mereka dijatuhkan dalam peristiwa pembunuhan yang tidak mereka lakukan. Film ini dirilis di bioskop di Amerika Serikat pada tanggal 9 Februari 1979 oleh Paramount Pictures.</br>
+
+        <br>Meskipun awalnya mendapatkan reaksi negatif akibat laporan kejahatan dan kekerasan, "The Warriors" kemudian menjadi film kult dan telah dihargai kembali oleh kritikus film. Film ini telah menghasilkan beberapa spin-off, termasuk video game dan seri komik.</br>
+
+        <br>Film ini menonjol karena pendekatannya yang unik dalam menggambarkan kehidupan dari perspektif gang jalan. Ini adalah pendekatan yang jelas tetapi revolusioner yang menyentuh kelas kerja perkotaan, terutama subset remaja mereka. Ini menunjukkan bagaimana film ini mampu menangkap dan menyentuh masyarakat dengan cara yang tidak biasa.</br>
+
+        <br>Soundtrack film ini, yang menampilkan musik oleh Barry De Vorzon, Joe Walsh, dan lainnya, dirilis pada label A&amp;M pada bulan Maret 1979. Soundtrack ini menjadi salah satu elemen penting dalam menciptakan suasana film yang intensif dan menarik.</br>
+
+        <br>"The Warriors" telah mendapatkan pengakuan dari berbagai sumber, termasuk Rotten Tomatoes yang memberikan film ini persentase persetujuan 88% berdasarkan 51 ulasan. Kritik konsensusnya adalah: "Seviolent apa pun itu, The Warriors adalah potongan film pulp yang menarik." Film ini juga dianggap sebagai salah satu film kult terbaik oleh Entertainment Weekly dan diikutsertakan dalam daftar "1000 Film Terbaik Pernah Dibuat" oleh The New York Times.</br>
+
+        <br>Dengan semua elemen ini, "The Warriors" menjadi contoh yang menunjukkan bagaimana film dapat menggambarkan kehidupan dari perspektif yang tidak biasa dan menarik, serta bagaimana film tersebut dapat menjadi bagian dari budaya pop yang lebih luas.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

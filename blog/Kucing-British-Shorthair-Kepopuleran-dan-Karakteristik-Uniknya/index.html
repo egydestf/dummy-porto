@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kucing British Shorthair: Kepopuleran dan Karakteristik Uniknya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Kucing British Shorthair: Kepopuleran dan Karakteristik Uniknya</h1>
+      <h2 id="blog_sub_title">#pets</h2>
+      <div id="blog"><p id="para_0_original"><br>Kucing British Shorthair (BSH) adalah salah satu jenis kucing yang populer di berbagai negara, termasuk Indonesia. Kucing ini dikenal karena rambutnya yang pendek dan halus, serta berbagai variasi warna yang menarik. Berikut ini adalah artikel yang membahas tentang Kucing British Shorthair.</br>
+
+        <br>Kucing British Shorthair, atau yang lebih dikenal dengan nama Domestic Shorthair, adalah kucing yang tidak termasuk dalam jenis kucing ras yang diakui secara resmi. Mereka dikenal dengan berbagai istilah, seperti Domestic Shorthair (DSH), House Cat, Shorthair (HCS), atau Shorthair Household Pet. Kucing ini sering digunakan dalam pendaftaran dan klasifikasi untuk tempat pengungsian atau penyelamatan hewan.</br>
+
+        <br>Kucing BSH memiliki karakteristik fisik yang beragam, termasuk warna rambut, ukuran tubuh, dan bentuk tubuh. Mereka dapat menunjukkan berbagai pola warna, dari hitam, putih, hingga warna-warna lainnya. Selain itu, mereka juga memiliki berbagai karakteristik fisik, sehingga kucing BSH di berbagai negara cenderung tampak berbeda dalam bentuk tubuh dan ukuran, karena mereka bekerja dengan berbagai pool genetika yang berbeda. Di Asia, kucing ini cenderung memiliki bentuk tubuh yang mirip dengan Siamese atau Tonkinese, sementara varietas Eropa dan Amerika memiliki bentuk tubuh yang lebih kuat dan berat.</br>
+
+        <br>Kucing BSH juga dikenal karena ketahanan mereka terhadap berbagai masalah genetik. Kucing yang tidak melalui proses pemilihan ras (selective breeding) cenderung lebih tidak rentan terhadap masalah genetik yang harus diperiksa dengan hati-hati pada kucing ras murni, karena mereka memiliki pool genetika yang beragam.</br>
+
+        <br>Dalam hal kesehatan, kucing BSH cenderung tidak rentan terhadap komplikasi kesehatan yang tidak biasa. Hal ini disebabkan oleh asal-usul mereka yang beragam, yang berarti mereka tidak rentan terhadap masalah genetik yang tidak biasa.</br>
+
+        <br>Kucing British Shorthair adalah pilihan yang baik bagi mereka yang mencari kucing yang tidak terlalu besar dan mudah dipelihara. Mereka cenderung menjadi kucing yang ramah dan bersemangat, serta mudah beradaptasi dengan lingkungan baru. Selain itu, mereka juga cenderung memiliki rambut yang tidak mudah menempel, yang membuatnya lebih mudah untuk dibersihkan dan dirawat.</br>
+
+        <br>Secara keseluruhan, Kucing BSH adalah pilihan yang baik bagi pemilik kucing yang mencari kucing yang tidak terlalu besar, mudah dipelihara, dan memiliki variasi warna yang menarik. Dengan karakteristik fisik dan kesehatan yang baik, serta ketahanan terhadap berbagai masalah genetik, kucing ini menjadi pilihan yang populer di berbagai negara, termasuk Indonesia.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
